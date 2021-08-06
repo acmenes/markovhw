@@ -2,12 +2,16 @@
 
 const fs = require('fs')
 const axios = require('axios')
-const process = require('process')
 
 const markov = require('./markov')
 
+/// it doesn't exactly generate text, just shows the key value pairs of the text given.
+
 function createText(text){
     let mm = new markov.MarkovMachine(text)
-    console.log(mm.createText())
-    return mm
+    console.log(mm.makeText())
+}
+
+function textFromPath(path){
+    fs.readFile(path)
 }
